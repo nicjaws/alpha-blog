@@ -1,4 +1,4 @@
-<h2 align="center">Title: <%= @article.title %></h2>
+<h2 align="center">Titulo: <%= @article.title %></h2>
 <div class="well col-xs-8 col-xs-offset-2">
     <% if @article.user %>
       <ul class="listing">
@@ -16,7 +16,7 @@
         </div>
       </ul>
     <% end %>
-  <h4 class="center description"><strong>Description:</strong></h4>
+  <h4 class="center description"><strong>Descripcion:</strong></h4>
   <hr>
   <%= simple_format(@article.description) %>
   <div class="article-actions">
