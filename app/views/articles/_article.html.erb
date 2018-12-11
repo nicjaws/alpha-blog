@@ -24,13 +24,13 @@
 
           <div class="article-actions">
 
-            <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+            <%= link_to "Editar esta pregunta", edit_article_path(article), class: "btn btn-xs btn-primary" %>
 
-            <%= link_to "Delete this article", article_path(article), 
+            <%= link_to "Borrar esta pregunta", article_path(article), 
             
                                               method: :delete,
 
-                                              data: { confirm: "Are you sure you want to delete the article?"},
+                                              data: { confirm: "Seguro que quieres borralo?"},
 
                                               class: "btn btn-xs btn-danger" %>
 

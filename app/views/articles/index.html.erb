@@ -1,9 +1,17 @@
-<h1 align="center">Lista de articulos</h1>
+<h1 align="center">Lista de preguntas</h1>
 <div align="center">
   <%= will_paginate %>
 </div>
+
+<div class="article-actions" align="center">
+  <%= link_to "Crear una nueva pregunta", new_article_path, class: "btn btn-m btn-primary" %>
+</div>
+<br/>
+
 <%= render 'article', obj: @articles %>
 <div align="center">
   <%= will_paginate %>
 </div>
+
+
 
