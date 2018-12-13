@@ -7,25 +7,22 @@ class UsersController < ApplicationController
   end
 
   def new
-
     @user = User.new
-
   end
 
   def create
-
     @user = User.new(user_params)
-    @user = User.first
+   # @user = User.first
 
     if @user.save
 
-    flash[:success] = "Welcome to the alpha blog #{@user.username}"
+      flash[:success] = "Bienvenido a Aduanas #{@user.username}"
 
-    redirect_to articles_path
+      redirect_to articles_path
 
     else
 
-    render 'new'
+      render 'new'
 
     end
 
