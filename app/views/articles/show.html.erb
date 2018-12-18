@@ -21,11 +21,12 @@
   <hr>
   <%= simple_format(@article.description) %>
   <div class="article-actions">
-    <%= link_to "Editar esta pregunta", edit_article_path(@article), class: "btn btn-xs btn-primary" %>  
-    <%= link_to "Borrar esta pregunta", article_path(@article), method: :delete, 
-                                        data: { confirm: "Are you sure you want to delete this article?"},
+    <% if logged_in? && current_user == @article.user %>
+      <%= link_to "Editar esta pregunta", edit_article_path(@article), class: "btn btn-xs btn-primary" %>  
+      <%= link_to "Borrar esta pregunta", article_path(@article), method: :delete, 
+                                        data: { confirm: "¿Estas seguro de borrar este articulo?"},
                                         class: "btn btn-xs btn-danger" %>  
+    <% end %>
     <%= link_to "Ver todas las preguntas", articles_path, class: "btn btn-xs btn-success" %>
-    
   </div>
 </div>

@@ -16,25 +16,27 @@
 
             <%= truncate(article.description, length: 100) %>
             <div class="article-meta-details">
-              <small> Created by: <%= article.user.username if article.user%>,
-                              <%= time_ago_in_words(article.created_at) %> ago,
-                              last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
+              <small> Creado por: <%= article.user.username if article.user%>,
+                              hace <%= time_ago_in_words(article.created_at) %>,
+                              Ultima actualizacion hace: <%= time_ago_in_words(article.updated_at) %> </small>
             </div>
           </div>
-
-          <div class="article-actions">
-
-            <%= link_to "Editar esta pregunta", edit_article_path(article), class: "btn btn-xs btn-primary" %>
-
-            <%= link_to "Borrar esta pregunta", article_path(article), 
-            
-                                              method: :delete,
-
-                                              data: { confirm: "Seguro que quieres borralo?"},
-
-                                              class: "btn btn-xs btn-danger" %>
-
-          </div>
+          
+          <% if logged_in? && current_user == article.user %>
+            <div class="article-actions">
+  
+              <%= link_to "Editar esta pregunta", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+  
+              <%= link_to "Borrar esta pregunta", article_path(article), 
+              
+                                                method: :delete,
+  
+                                                data: { confirm: "Seguro que quieres borralo?"},
+  
+                                                class: "btn btn-xs btn-danger" %>
+  
+            </div>
+          <% end %>
 
         </div>
 
